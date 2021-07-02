@@ -80,7 +80,7 @@ custom:
 
 functions:
   hello:
-    handler: src/hello.default
+    handler: src/hello.hello
     events:
       - http:
           path: hello

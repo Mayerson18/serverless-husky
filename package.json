@@ -4,18 +4,18 @@
   "main": "src/handler.js",
   "license": "MIT",
   "scripts": {
-    "deploy:env": "sls deploy --stage $NODE_ENV",
+    "deploy:env": "serverless deploy --stage $NODE_ENV",
     "deploy": "export NODE_ENV=dev && yarn deploy:env",
     "deploy:production": "export NODE_ENV=production && yarn deploy:env",
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
     "lint": "eslint src --ext ts,js --no-ignore --fix",
-    "serve": "sls offline -P 4000",
+    "serve": "serverless offline -P 4000",
     "serve:watch": "nodemon -e js,ts,jsx,tsx -x yarn serve",
-    "tail:hello": "sls logs --function hello --tail",
+    "tail:hello": "serverless logs --function hello --tail",
     "test": "jest",
     "test:watch": "jest --watch",
-    "build": "sls webpack",
-    "watch:hello": "sls invoke local --watch --function hello --path fixtures/event.json"
+    "build": "serverless webpack",
+    "watch:hello": "serverless invoke local --watch --function hello --path fixtures/event.json"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
